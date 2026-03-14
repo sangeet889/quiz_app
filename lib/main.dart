@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quizapp/homepage.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:quizapp/result_page.dart';
 
 void main() {
   runApp(const MyApp());

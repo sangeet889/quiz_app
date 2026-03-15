@@ -238,14 +238,3 @@ class AnswerCard extends StatelessWidget {
     );
   }
 }
-
-// class OptionsModel {
-//   const OptionsModel({
-//     required this.label,
-//     required this.answer,
-//     this.color = const Color(0xffFBF3DD),
-//   });
-//   final String label;
-//   final String answer;
-//   final Color color;
-// }

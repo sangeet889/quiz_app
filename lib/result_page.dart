@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quizapp/homepage.dart';
+import 'package:quizapp/question_bank.dart';
 
 class ResultPage extends StatelessWidget {
   const ResultPage({required this.score, super.key});
@@ -17,9 +18,19 @@ class ResultPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               /// Top Image
-              Image.asset('assets/images/score_frame.png', height: 280),
+              Stack(
+                alignment: Alignment.center,
+                children: [
+                  Image.asset('assets/images/score_frame.png', height: 280),
 
-              const SizedBox(height: 20),
+                  Text(
+                    '${((score / allQuestions.length) * 100).toInt()}%',
+                    style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+
+              SizedBox(height: 20),
 
               const Text(
                 "Your Score",
@@ -97,7 +108,10 @@ class ResultPage extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
-                    Navigator.pop(context);
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => HomeScreen()),
+                    );
                   },
                   child: Text(
                     "Back to Home",
